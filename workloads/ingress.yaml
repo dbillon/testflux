@@ -3,20 +3,25 @@ kind: Ingress
 metadata:
   name: hello-ingress
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/group.name: obscep
+    external-dns.alpha.kubernetes.io/hostname: test5.obscep.com
+    external-dns.alpha.kubernetes.io/hostname: test6.obscep.com
 spec:
-  # ingressClassName: nginx
   rules:
-  - http:  # by path
+  - host: test5.obscep.com
+    http:
       paths:
-      - path: /hw1
+      - path: /
         pathType: Prefix
         backend:
           service:
             name: hello-un
             port:
               number: 80
-  - host: hw2.kub
+  - host: test6.obscep.com
     http:
       paths:
       - path: /
