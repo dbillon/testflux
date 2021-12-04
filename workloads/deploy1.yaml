@@ -19,6 +19,6 @@ spec:
         - containerPort: 8080
         env:
         - name: MESSAGE
-          value: Hello je suis Bob !!!
+          value: Hello je suis Damien !!!
         # - name: HANDLER_PATH_PREFIX
         #   value: "/hw1"
