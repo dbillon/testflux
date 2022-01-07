@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: hello-un
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: hello-un
@@ -19,6 +19,6 @@ spec:
         - containerPort: 8080
         env:
         - name: MESSAGE
-          value: Hello je suis CEP !!!
+          value: Hello je suis UN !!!
         # - name: HANDLER_PATH_PREFIX
         #   value: "/hw1"
